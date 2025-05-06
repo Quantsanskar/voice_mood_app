@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-s3cr3tk3y-f0r-d3v3l0pm3nt-0nly'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','moodingo.netlify.app']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
