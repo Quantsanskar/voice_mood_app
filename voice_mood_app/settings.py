@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-s3cr3tk3y-f0r-d3v3l0pm3nt-0nly'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','voice-mood-app.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','voice-mood-app.onrender.com','moodingo.netlify.app']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -33,10 +33,13 @@ MIDDLEWARE = [
 ]
 
 # Allow CORS for Next.js frontend
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_CREDENTIALS = True
-
+CORS_ALLOWED_ORIGINS=['https://moodingo.netlify.app']
 ROOT_URLCONF = 'voice_mood_app.urls'
+CORS_ALLOW_METHODS = ['DELETE','GET','OPTIONS','PATCH','POST','PUT']
+CORS_ALLOW_HEADERS = ['accept','accept-encoding','authorization','content-type','dnt','origin','user-agent','x-csrftoken','x-requested-with']
+
 
 TEMPLATES = [
     {
