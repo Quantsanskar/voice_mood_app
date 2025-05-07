@@ -33,14 +33,30 @@ MIDDLEWARE = [
 ]
 
 # Allow CORS for Next.js frontend
-CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_ALL_ORIGINS = False  # Keep this False for security
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS=['https://moodingo.netlify.app']
+CORS_ALLOWED_ORIGINS = [
+    'https://moodingo.netlify.app',
+    'http://localhost:3000',
+]
+CORS_ALLOWED_ORIGIN_REGEXES = []
 CORS_EXPOSE_HEADERS = ['Content-Type', 'X-CSRFToken']
-CORS_ALLOW_METHODS = ['DELETE','GET','OPTIONS','PATCH','POST','PUT']
-CORS_ALLOW_HEADERS = ['accept','accept-encoding','authorization','content-type','dnt','origin','user-agent','x-csrftoken','x-requested-with']
-CORS_PREFLIGHT_MAX_AGE = 86400  # 24 hours
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ALLOW_METHODS = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+CSRF_TRUSTED_ORIGINS = [
+    'https://moodingo.netlify.app',
+    'https://voice-mood-app.onrender.com',
+]
 
 ROOT_URLCONF = 'voice_mood_app.urls'
 
