@@ -36,10 +36,13 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS=['https://moodingo.netlify.app']
-ROOT_URLCONF = 'voice_mood_app.urls'
+CORS_EXPOSE_HEADERS = ['Content-Type', 'X-CSRFToken']
 CORS_ALLOW_METHODS = ['DELETE','GET','OPTIONS','PATCH','POST','PUT']
 CORS_ALLOW_HEADERS = ['accept','accept-encoding','authorization','content-type','dnt','origin','user-agent','x-csrftoken','x-requested-with']
+CORS_PREFLIGHT_MAX_AGE = 86400  # 24 hours
+CORS_ORIGIN_ALLOW_ALL = False
 
+ROOT_URLCONF = 'voice_mood_app.urls'
 
 TEMPLATES = [
     {
